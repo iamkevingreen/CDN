@@ -16,6 +16,20 @@ Template Name: Front-Page Template
 
 <?php while (have_posts()) : the_post(); ?>
   <?php get_template_part('templates/content', get_post_format()); ?>
+
+bagel
+<?php
+ 
+/*
+*  View array data (for debugging)
+*/
+ 
+var_dump( get_field('front_page_links') );
+ 
+?>
+
+
+
 <?php endwhile; ?>
 
 <?php if ($wp_query->max_num_pages > 1) : ?>

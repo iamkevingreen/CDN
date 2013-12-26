@@ -10,7 +10,7 @@ function roots_template_path() {
 }
 
 function roots_sidebar_path() {
-  return new Roots_Wrapping('templates/sidebar.php');
+ // return new Roots_Wrapping('templates/sidebar.php');
 }
 
 class Roots_Wrapping {

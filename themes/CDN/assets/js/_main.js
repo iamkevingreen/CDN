@@ -5,7 +5,20 @@ var ExampleSite = {
   // All pages
   common: {
     init: function() {
-      // JS here
+      var elms = document.getElementsByTagName("*");
+      var n = elms.length;
+      for(var i = 0; i < n; i ++) {
+          if(window.getComputedStyle(elms[i]).cursor === "pointer") {
+              elms[i].style.cursor = "url(localhost/cdn/assets/img/fly-cursor.png)";
+          }
+      }
+      $('.other-ep-slides').bxSlider({
+        slideWidth: 172,
+        minSlides: 2,
+        maxSlides: 4,
+        slideMargin: 20,
+        pager: false
+      });
     },
     finalize: function() { }
   },

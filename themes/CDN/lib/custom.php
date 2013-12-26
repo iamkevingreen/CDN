@@ -98,3 +98,25 @@ function create_post_types() {
 
 add_action('init', 'create_post_types');
 
+function get_video_feed($exclude){
+    $exclude_ids = array($exclude);
+    $args = array(
+        'post_type' => array('videos'),
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'ASC',
+        'post__not_in' => $exclude_ids,
+        'posts_per_page' => 50
+    );
+    $posts = get_posts($args);
+    $html = '<ul class="industry-solutions">';
+    foreach ($posts as $post) {
+        $img = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+        $img = !empty($img) ? sprintf('<img src="%s" alt="%s" />', $img, $post->post_title) : '';
+        $html .= sprintf('<li><a class="noborder" href="%s">%s</a></li>', get_permalink($post->ID), $img.$post->post_title);
+    }
+    $html .= '</ul>';
+    return $html;
+}
+
+
