@@ -98,25 +98,25 @@ function create_post_types() {
 
 add_action('init', 'create_post_types');
 
-function get_video_feed($exclude){
-    $exclude_ids = array($exclude);
+function get_feed($post_a){
+    $the_array = $post_a;
     $args = array(
-        'post_type' => array('videos'),
-        'post_status' => 'publish',
-        'orderby' => 'date',
-        'order' => 'ASC',
-        'post__not_in' => $exclude_ids,
-        'posts_per_page' => 50
+        'post_type' => array('videos', 'posts', 'placeholder-images', 'modals', 'pages'),
+        'numberposts'   => '-1',
+        'post__in' => array(24, 22, 20, 23, 14, 18),
+        //'order' => 'DESC',
+        //'order_by' => 'post__in',
+        //'post_status'     => 'publish',
     );
     $posts = get_posts($args);
-    $html = '<ul class="industry-solutions">';
     foreach ($posts as $post) {
-        $img = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-        $img = !empty($img) ? sprintf('<img src="%s" alt="%s" />', $img, $post->post_title) : '';
-        $html .= sprintf('<li><a class="noborder" href="%s">%s</a></li>', get_permalink($post->ID), $img.$post->post_title);
+        $post_type = get_post_type($post->ID);
+          
+        $post_test = get_field('placeholder_graphic', $post->ID);
+        $html .= '
+            <li class="'.$post->ID.'"><h4>'.$post->post_title . $post_test . '</h4></li>
+        ';
     }
-    $html .= '</ul>';
     return $html;
 }
-
 

@@ -1,20 +1,31 @@
 <div id="feed">
   <div class="wrapper">
     <div class="about">
-      <h4>About the Terribles</h4>
-      <p>This is an interactive documentary series, presented by a cast of journalist puppets. In each episode the puppets are sent on assignment to an exotic location where they get into all sorts of trouble while investigating their story. Their assignments cover a wide range of topics, including current environmental issues and unique cultural celebrations.</p>
+      <h4>About <?php the_title(); ?></h4>
+      <?php the_content(); ?>  
     </div>
     <div class="other-ep">
         <h4>Other Episodes</h4>
-        <div class="other-ep-slides">
-          <div class="slide"><img src="http://placehold.it/350x150&text=FooBar1"></div>
-          <div class="slide"><img src="http://placehold.it/350x150&text=FooBar2"></div>
-          <div class="slide"><img src="http://placehold.it/350x150&text=FooBar3"></div>
-          <div class="slide"><img src="http://placehold.it/350x150&text=FooBar4"></div>
-        </div>
+        <div id="video-feed" class="flexslider">
+          <?php 
+            $post_title = get_the_title();
+            $rows = get_field('episode');
+            if($rows)
+            {
+              echo '<ul class="slides">';
+             
+              foreach($rows as $row)
+              {
+                echo '<li>
+                  <div class="slide-img"><img src="' . $row['video_thumbnail'] . '" alt="" /></div>' 
+                . '<h4 class="title">' . $post_title . ': ' . $row['episode_title'] .'</h4>' .
+                '<div class="meta">' . $row['episode_meta'] . '</div></li>';
+              }
+             
+              echo '</ul>';
+            } ?>
 
-        <?php 
-        $postid = get_the_ID();
-        echo get_video_feed($postid); ?>
+
+        </div>
   </div>
 </div>

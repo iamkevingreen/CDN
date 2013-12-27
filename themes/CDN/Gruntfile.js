@@ -36,7 +36,7 @@ module.exports = function(grunt) {
             'assets/js/plugins/bootstrap/transition.js',
             'assets/js/plugins/bootstrap/carousel.js',
             'assets/js/plugins/bootstrap/modal.js',
-            'assets/js/vender/jquery.bxslider.min.js',
+            'assets/js/vender/jquery.flexslider-min.js',
             'assets/js/plugins/*.js',
             'assets/js/_*.js'
           ]

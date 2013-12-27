@@ -12,12 +12,22 @@ var ExampleSite = {
               elms[i].style.cursor = "url(localhost/cdn/assets/img/fly-cursor.png)";
           }
       }
-      $('.other-ep-slides').bxSlider({
-        slideWidth: 172,
-        minSlides: 2,
-        maxSlides: 4,
-        slideMargin: 20,
-        pager: false
+       $('#video-feed').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 210,
+        itemMargin: 5,
+        asNavFor: '#episodes'
+      });
+       
+      $('#episodes').flexslider({
+        animation: "fade",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#video-feed"
       });
     },
     finalize: function() { }
