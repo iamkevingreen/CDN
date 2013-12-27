@@ -103,9 +103,9 @@ function get_feed($post_a){
     $args = array(
         'post_type' => array('videos', 'posts', 'placeholder-images', 'modals', 'pages'),
         'numberposts'   => '-1',
-        'post__in' => array(24, 22, 20, 23, 14, 18),
-        //'order' => 'DESC',
-        //'order_by' => 'post__in',
+        'post__in' => $the_array,
+        'orderby' => 'post__in',
+        'order' => 'DESC',
         //'post_status'     => 'publish',
     );
     $posts = get_posts($args);
