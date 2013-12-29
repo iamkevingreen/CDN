@@ -17,8 +17,8 @@ var ExampleSite = {
         controlNav: false,
         animationLoop: false,
         slideshow: false,
-        itemWidth: 210,
-        itemMargin: 5,
+        itemWidth: 180,
+        itemMargin: 10,
         asNavFor: '#episodes'
       });
        
@@ -28,6 +28,20 @@ var ExampleSite = {
         animationLoop: false,
         slideshow: false,
         sync: "#video-feed"
+      });
+
+      $('.modal-block a').click(function(){
+          // window.location.hash = this.attr('href'); //set hash
+          return false; //disables browser anchor jump behavior
+      });
+      $(window).bind('hashchange', function () { //detect hash change
+          $('.modal-window').removeClass('active');
+          var hash = window.location.hash.slice(1); //hash to string (= "myanchor")
+          // alert(hash);
+          $('#' + hash).addClass('active');
+      });
+      $('.modal-window').on('click', function() {
+        $(this).removeClass('active');
       });
     },
     finalize: function() { }

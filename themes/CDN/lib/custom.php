@@ -101,7 +101,7 @@ add_action('init', 'create_post_types');
 function get_feed($post_a){
     $the_array = $post_a;
     $args = array(
-        'post_type' => array('videos', 'posts', 'placeholder-images', 'modals', 'pages'),
+        'post_type' => array('videos', 'posts', 'placeholder-images', 'modals', 'page'),
         'numberposts'   => '-1',
         'post__in' => $the_array,
         'orderby' => 'post__in',
@@ -109,14 +109,68 @@ function get_feed($post_a){
         //'post_status'     => 'publish',
     );
     $posts = get_posts($args);
+    $html = '<div class="row-fluid">';
     foreach ($posts as $post) {
         $post_type = get_post_type($post->ID);
-          
-        $post_test = get_field('placeholder_graphic', $post->ID);
-        $html .= '
-            <li class="'.$post->ID.'"><h4>'.$post->post_title . $post_test . '</h4></li>
-        ';
+        $link_out = get_permalink($post->ID);
+        $content = get_the_content($post->ID);
+        $color = get_field('text_and_modal_color', $post->ID);
+        if($post_type == 'modals') {
+            $html .= '
+                <div class="span2 feed modal-block">
+                  <a href="#' . $post->post_name . '" style="border-color: '.$color.'; color: '.$color.';">
+                  <div class="modal-border">
+                    <h4>'.$post->post_title . '</h4>
+                    <div class="icon-arrow-right"></div>
+                  </div></a>
+                </div>
+                <div id="'.$post->post_name.'" class="modal-window">
+                    <div class="modal-container">
+                        <div class="modal-bits">
+                            '.$content.'
+                        </div>
+                    </div>
+                </div>
+
+            ';
+        } else if ($post_type == 'placeholder-images') {
+            $placeholder = get_field('placeholder_graphic', $post->ID);
+            $html .= '
+                <div class="span2 feed placeholder">
+                    <img src="'. $placeholder . '" alt="" />
+                </div>
+            ';
+        } else if ($post_type == 'videos') {
+            $static_graphic = get_field('static_graphic', $post->ID);
+            $hover_gif = get_field('hover_gif', $post->ID);
+            $hover_note = get_field('hover_callout_graphic', $post->ID);
+            $hover_position = get_field('hover_position', $post->ID);
+            $link_out = get_permalink($post->ID);
+            $html .= '
+              <a href="' . $link_out . '">
+                <div class="span4 feed video-item">
+                    <img class="hover_note '.$hover_position.'" src="'. $hover_note . '" alt="" />
+                    <img class="hover" src="'. $hover_gif . '" alt="" />
+                    <img src="'. $static_graphic . '" alt="" />
+                </div>
+              </a>
+            ';
+        } else  {
+            $static_graphic = get_field('static_graphic', $post->ID);
+            $hover_gif = get_field('hover_graphic', $post->ID);
+            $link_out = get_permalink($post->ID);
+            $html .= '
+                <a href="' . $link_out . '">
+                <div class="span4 feed booger-item">
+                    <img class="hover" src="'. $hover_gif . '" alt="" />
+                    <img src="'. $static_graphic . '" alt="" />
+                </div>
+              </a>
+            ';
+        }
+  
     }
+    $html .= '</div>';
     return $html;
 }
 
