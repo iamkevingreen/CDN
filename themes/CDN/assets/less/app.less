@@ -1,7 +1,8 @@
 /*!
  * CDN
  */
-
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/296db2");
 
 
 @import "bootstrap/bootstrap.less";
@@ -13,15 +14,66 @@
 /* ==========================================================================
    Base
    ========================================================================== */
+body, li, i {
+   font-family: 'NeuzeitSLTStd-Book';
+   font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+   font-family: 'NeuzeitSLTStd-BookHeavy';
+   font-weight: normal;
+}
 
-body { }
 
 .container {
    width: 100%;
    margin: 0 auto;
    padding: 0 0;
 }
-
+.row-fluid {
+   width: 96%;
+   margin: 0 auto;
+   .feed {
+      min-height: 300px;
+   }
+   .span2 {
+      float: left;
+      width: 16.6666667%;
+      // border: 2px solid #ccc;
+      .box-sizing();
+      &.placeholder {
+         text-align: center;
+      }
+      &.modal-block {
+         padding-top: 30px;
+         a {
+            display: block;
+            min-height: 200px;
+            width: 94%;
+            margin: 0 auto;
+            border: 8px solid red;
+            padding: 10px;
+            .box-sizing();
+            position: relative;
+         }
+      }
+   }
+   .span4 {
+      width: 33.3333333%;
+      float: left;
+      text-align: center;
+      img {
+         padding-top: 40px;
+      }
+   }
+   h4 {
+      font-size: 26px;
+   }
+   .icon-arrow-right {
+      font-size: 20px;
+      position: absolute;
+      bottom: 0px;
+   }
+}
 
 /* ==========================================================================
    Header
@@ -97,7 +149,8 @@ body { }
    }
 }
 #feed {
-   background: #ccc;
+   background: #B01D0A;
+   padding: 40px 0 80px;
    .wrapper {
       max-width: @wrapwidth;
       margin: 0 auto;
@@ -113,6 +166,49 @@ body { }
    width: 100%;
    height: 100%;
 }
+
+.slides {
+   li {
+      cursor: pointer;
+      .opacity(.80);
+      &.flex-active-slide {
+         .opacity(1);
+      }
+      &:hover {
+         .opacity(1);
+      }
+   }
+}
+/* ==========================================================================
+   Modal Content
+   ========================================================================== */
+.modal-window {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   overflow: scroll;
+   top: 0px;
+   left: 0px;
+   z-index: -1;
+   .opacity(0);
+   background: rgba(255,255,255,.4);
+   .modal-container {
+      position: absolute;
+      width: 600px;
+      margin-left: -300px;
+      top: 50%;
+      left: 50%;
+      height: 400px;
+      margin-top: -200px;
+      padding: 40px;
+      .box-sizing();
+      border: 6px solid red;
+      background: #fff;
+   }
+}
+
+
+
 /* ==========================================================================
    flex overrides
    ========================================================================== */

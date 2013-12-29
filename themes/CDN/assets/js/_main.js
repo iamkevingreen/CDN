@@ -17,8 +17,8 @@ var ExampleSite = {
         controlNav: false,
         animationLoop: false,
         slideshow: false,
-        itemWidth: 210,
-        itemMargin: 5,
+        itemWidth: 180,
+        itemMargin: 10,
         asNavFor: '#episodes'
       });
        
