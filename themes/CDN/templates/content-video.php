@@ -6,6 +6,7 @@
 
   while ($wp_query->have_posts()) : $wp_query->the_post(); 
   $post_title = get_the_title();
+  $post_url = get_permalink();
 ?>
 
   <article <?php post_class(); ?>>
@@ -31,7 +32,10 @@
                       </div>
                       <div class="social">
                           <div class="btn-block"><span class="icon-share">Share</span></div>
-                          <div class="btn-block"><span class="icon-facebook">Like (115)</span></div>
+                          <div class="btn-block">
+                              <div class="fb-like" data-href="'. $post_url .'" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+
+                          </div>
                       </div>
                    </div>
                    </li>';

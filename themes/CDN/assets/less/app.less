@@ -29,6 +29,13 @@ h4 {
    font-size:16px;
 }
 
+.container>.navbar-header, .container>.navbar-collapse {
+   margin: 0 0 !important;
+}
+
+.col-sm-12 {
+   padding: 0 0;
+}
 
 .container {
    width: 100%;
@@ -61,6 +68,17 @@ h4 {
             padding: 10px;
             .box-sizing();
             position: relative;
+            .transition(all .5s);
+            &:hover {
+               text-decoration: none;
+               .opacity(.5);
+               .transition(all .5s);
+            }
+         }
+         h4 {
+            font-size: 20px;
+            text-transform: none;
+            line-height: 1.4;
          }
       }
    }
@@ -74,12 +92,12 @@ h4 {
       }
       .hover {
          .opacity(0);
-         .animation(all .5s);
+            .transition(all .5s);
          position: absolute;
       }
       .hover_note {
          .opacity(0);
-         .animation(all .5s);
+            .transition(all .5s);
          position: absolute;
          margin-top: -40px;
          margin-left: -40px;
@@ -87,11 +105,11 @@ h4 {
       &:hover {
          .hover {
             .opacity(1);
-            .animation(all .5s);
+            .transition(all .5s);
          }
          .hover_note {
             .opacity(1);
-            .animation(all .5s);
+            .transition(all .5s);
             z-index:20;
          }
       }
@@ -100,7 +118,7 @@ h4 {
       font-size: 26px;
    }
    .icon-arrow-right {
-      font-size: 20px;
+      font-size: 28px;
       position: absolute;
       bottom: 0px;
    }
@@ -116,6 +134,8 @@ h4 {
       background-color: #fff;
       border-bottom: 0px;
       z-index: 100;
+      margin-bottom: 0px;
+      padding-bottom: 20px;
    }
 }
 
@@ -128,6 +148,51 @@ h4 {
 .content { }
 
 
+/* ==========================================================================
+   Boogers
+   ========================================================================== */
+
+.post-37 {
+   text-align: center;
+   .header {
+      img {
+         max-width: 100%;
+         padding-bottom: 30px;
+         padding-top:20px;
+      }
+   }
+   .ranking {
+      padding: 40px 0 60px;
+      margin-top: 50px;
+   }
+   #content {
+      position:relative;
+      #pagination {
+         position: absolute;
+         width: 100%;
+         z-index: 100;
+         top: 30%;
+         a {
+            font-size: 30px;
+            color: #596e16;
+            .transition(color .5s);
+            &:hover {
+               color: #1e2506;
+               .transition(color .5s);
+               text-decoration: none;
+            }
+         }
+      }
+   }
+   .old {
+      position: absolute;
+      right: 30px;
+   }
+   .new {
+      position: absolute;
+      left: 30px;
+   }
+}
 
 /* ==========================================================================
    Primary Content
@@ -157,7 +222,7 @@ h4 {
 .single-videos {
    .main {
       margin: 0 auto;
-      padding: 0 0;
+      padding: 20px 0 0;
       .box-sizing;
    }
    .content {
@@ -190,9 +255,13 @@ h4 {
       .opacity(.5);
    }
 }
+h1.title {
+   color: #fff;
+}
 #feed {
    background: #B01D0A;
    padding: 40px 0 80px;
+   margin-top: 30px;
    .wrapper {
       max-width: @wrapwidth;
       margin: 0 auto;
@@ -201,6 +270,11 @@ h4 {
    }
    li {
       margin-right: 20px;
+   }
+   .about {
+      border-bottom: 1px solid rgba(0,0,0,.7);
+      padding-bottom: 50px;
+      margin-bottom: 40px;
    }
 }
 
@@ -288,7 +362,34 @@ h4 {
    Footer
    ========================================================================== */
 
-.content-info { }
+.content-info { 
+   background-color: #F0F0F0;
+   padding: 50px 0 40px;
+   ul {
+      min-height: 150px;
+      li {
+         display: inline-block;
+         vertical-align: top;
+         text-transform: uppercase;
+         font-family: 'NeuzeitSLTStd-BookHeavy';
+         width: 200px;
+         cursor: pointer;
+         &.signup {
+            color: #02d2c1;
+         }
+         &.feedback {
+            color: #b4d366;
+         }
+      }
+   }
+   p {
+      text-align: right;
+      text-transform: uppercase;
+      font-family: 'NeuzeitSLTStd-BookHeavy';
+      color: rgba(0,0,0,.3);
+      width: 98%;
+   }
+}
 
 
 
@@ -308,8 +409,41 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    Media Queries
    ========================================================================== */
 
-@media (min-width: @screen-sm-min) { }
+@media (max-width: 1000px) {
+   .row-fluid {
+      .span2 {
+         width: 25%;
+      }
+      .span4 {
+         width: 50%;
+      }
+   }
+}
 
-@media (min-width: @screen-md-min) { }
-
-@media (min-width: @screen-lg-min) { }
+@media (max-width: 700px) {
+   .row-fluid {
+      .span2 {
+         width: 50%;
+      }
+      .span4 {
+         width: 100%;
+      }
+   }
+}
+@media (max-width: 500px) { 
+   .row-fluid .span4 img {
+      width: 100%;
+   }
+   header {
+      img {
+         width: 100%;
+      }
+   }
+   footer {
+      p {
+         text-align: center;
+         width: 80%;
+         margin: 0 auto;
+      }
+   }
+}

@@ -31,7 +31,11 @@ var ExampleSite = {
       });
 
       $('.modal-block a').click(function(){
-          // window.location.hash = this.attr('href'); //set hash
+          window.location.hash = $(this).attr('href'); //set hash
+          return false; //disables browser anchor jump behavior
+      });
+      $('footer li').click(function(){
+          window.location.hash = $(this).attr('data-hash'); //set hash
           return false; //disables browser anchor jump behavior
       });
       $(window).bind('hashchange', function () { //detect hash change

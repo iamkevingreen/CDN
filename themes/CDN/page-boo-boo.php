@@ -8,6 +8,12 @@ Template Name: Boo Boo Template
 	.banner.navbar-default {
 		background-color: <?php the_field('top_color'); ?>;
 	}
+	main {
+		background-color: <?php the_field('top_color'); ?>;
+	}
+	.ranking {
+		background-color: <?php the_field('bottom_color'); ?>;
+	}
 </style>
 
 <?php get_template_part('templates/content', 'boo'); ?>
