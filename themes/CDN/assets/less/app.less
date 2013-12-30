@@ -320,10 +320,43 @@ h1.title {
       left: 50%;
       height: 400px;
       margin-top: -200px;
-      padding: 40px;
+      padding: 20px 40px;
       .box-sizing();
       border: 6px solid red;
       background: #fff;
+      &.modal23 {
+         input[type='submit'] {
+            background-color: #b4d366;              
+         }
+         height: 540px;
+         margin-top: -270px;
+      }
+   }
+   .input-row {
+      input, textarea {
+         background-color: #F0EFF0;
+         border: none;
+         padding: 8px;
+         .box-sizing();
+         width: 100%;
+         margin-top: 14px;
+         font-family: 'NeuzeitSLTStd-BookHeavy';
+         font-weight: normal;
+         color: #070201;
+      }
+      textarea {
+         resize: none;
+         margin-bottom: 14px;
+         height: 160px;
+      }
+
+   }
+   input[type='submit'] {
+      color: #fff;
+      font-family: 'NeuzeitSLTStd-BookHeavy';
+      font-weight: normal;
+      border: none;
+      padding: 11px 20px 5px;
    }
    &.active {
       .animation(all .5s);

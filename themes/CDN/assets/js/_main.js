@@ -46,6 +46,12 @@ var ExampleSite = {
       });
       $('.modal-window').on('click', function() {
         $(this).removeClass('active');
+          window.location.hash = '#clear'; //set hash
+          return false;
+      });
+      $('.modal-window .modal-container').on('click', function(event) {
+        event.stopPropagation();
+        return false;
       });
     },
     finalize: function() { }

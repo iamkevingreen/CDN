@@ -115,6 +115,7 @@ function get_feed($post_a){
         $link_out = get_permalink($post->ID);
         $content = get_the_content($post->ID);
         $color = get_field('text_and_modal_color', $post->ID);
+        $modal_type = get_field('modal_type', $post->ID);
         if($post_type == 'modals') {
             $html .= '
                 <div class="span2 feed modal-block">
@@ -125,9 +126,13 @@ function get_feed($post_a){
                   </div></a>
                 </div>
                 <div id="'.$post->post_name.'" class="modal-window">
-                    <div class="modal-container">
+                    <div class="modal-container modal'.$post->ID.'" style="border-color: '.$color.'; color: '.$color.';">
                         <div class="modal-bits">
-                            '.$content.'
+                            '.$post->post_content;
+            if ($modal_type == 'contactform') {
+                $html .= do_shortcode( '[contact-form-7 id="8" title="Contact form 1"]' ); 
+            }
+            $html .= '
                         </div>
                     </div>
                 </div>
