@@ -25,6 +25,7 @@ var ExampleSite = {
       $('#episodes').flexslider({
         animation: "fade",
         controlNav: false,
+        controlsContainer: ".flex-controls",
         animationLoop: false,
         slideshow: false,
         sync: "#video-feed"

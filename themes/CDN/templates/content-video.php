@@ -37,7 +37,8 @@
              
               echo '</ul>';
             } ?>
-
+      </div>
+      <div class="flex-controls"></div>
     </header>
       
   </article>
