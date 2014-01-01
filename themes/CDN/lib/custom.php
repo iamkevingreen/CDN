@@ -151,12 +151,14 @@ function get_feed($post_a){
             $hover_gif = get_field('hover_gif', $post->ID);
             $hover_note = get_field('hover_callout_graphic', $post->ID);
             $hover_position = get_field('hover_position', $post->ID);
+            $callout = get_field('additional_callout_graphic', $post->ID);
             $link_out = get_permalink($post->ID);
             $html .= '
               <a href="' . $link_out . '">
                 <div class="span4 feed video-item">
                     <img class="hover_note '.$hover_position.'" src="'. $hover_note . '" alt="" />
                     <img class="hover" src="'. $hover_gif . '" alt="" />
+                    <img class="callout" src="'. $callout . '" alt="" />
                     <img src="'. $static_graphic . '" alt="" />
                 </div>
               </a>
