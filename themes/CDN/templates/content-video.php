@@ -50,10 +50,6 @@
 
 <?php endwhile; ?>
 
-<nav>
-    <?php previous_posts_link('&laquo; Newer') ?>
-    <?php next_posts_link('Older &raquo;') ?>
-</nav>
 
 <?php 
   $wp_query = null; 
