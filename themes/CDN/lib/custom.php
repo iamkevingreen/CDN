@@ -154,7 +154,7 @@ function get_feed($post_a){
             $callout = get_field('additional_callout_graphic', $post->ID);
             $coming_soon = get_field('coming_soon', $post->ID);
             $link_out = get_permalink($post->ID);
-            if ($coming_soon == 'no') {
+            if ($coming_soon == 'No') {
                 $html .= '
                   <a href="' . $link_out . '">';
             }
@@ -166,7 +166,7 @@ function get_feed($post_a){
                     <img src="'. $static_graphic . '" alt="" />
                 </div>
             ';
-             if ($coming_soon == 'no') {
+             if ($coming_soon == 'No') {
                 $html .= '</a>';
             }
         } else  {
