@@ -152,7 +152,7 @@ function get_feed($post_a){
             $hover_note = get_field('hover_callout_graphic', $post->ID);
             $hover_position = get_field('hover_position', $post->ID);
             $callout = get_field('additional_callout_graphic', $post->ID);
-            $comming_soon = get_field('coming_soon', $post->ID);
+            $coming_soon = get_field('coming_soon', $post->ID);
             $link_out = get_permalink($post->ID);
             if ($coming_soon == 'no') {
                 $html .= '
