@@ -1,10 +1,4 @@
-<?php 
-  $temp = $wp_query; 
-  $wp_query = null; 
-  $wp_query = new WP_Query(); 
-  $wp_query->query('showposts=1&post_type=videos'.'&paged='.$paged); 
-
-  while ($wp_query->have_posts()) : $wp_query->the_post(); 
+<?php while (have_posts()) : the_post(); 
   $post_title = get_the_title();
   $post_url = get_permalink();
 ?>
@@ -50,8 +44,3 @@
 
 <?php endwhile; ?>
 
-
-<?php 
-  $wp_query = null; 
-  $wp_query = $temp;  // Reset
-?>

@@ -141,9 +141,6 @@ function get_feed($post_a){
         } else if ($post_type == 'placeholder-images') {
             $placeholder = get_field('placeholder_graphic', $post->ID);
             $spansize = get_field('span_size', $post->ID);
-            if ($spansize == '') {
-                $spansize = 'span2';
-            }
             $html .= '
                 <div class="' .$spansize. ' feed placeholder">
                     <img src="'. $placeholder . '" alt="" />
