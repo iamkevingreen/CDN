@@ -167,8 +167,7 @@ function get_feed($post_a){
                 </div>
             ';
              if ($coming_soon == 'no') {
-                $html .= '
-                  </a>'
+                $html .= '</a>';
             }
         } else  {
             $static_graphic = get_field('static_graphic', $post->ID);
