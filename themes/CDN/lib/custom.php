@@ -152,17 +152,24 @@ function get_feed($post_a){
             $hover_note = get_field('hover_callout_graphic', $post->ID);
             $hover_position = get_field('hover_position', $post->ID);
             $callout = get_field('additional_callout_graphic', $post->ID);
+            $comming_soon = get_field('coming_soon', $post->ID);
             $link_out = get_permalink($post->ID);
+            if ($coming_soon == 'no') {
+                $html .= '
+                  <a href="' . $link_out . '">';
+            }
             $html .= '
-              <a href="' . $link_out . '">
                 <div class="span4 feed video-item">
                     <img class="hover_note '.$hover_position.'" src="'. $hover_note . '" alt="" />
                     <img class="hover" src="'. $hover_gif . '" alt="" />
                     <img class="callout" src="'. $callout . '" alt="" />
                     <img src="'. $static_graphic . '" alt="" />
                 </div>
-              </a>
             ';
+             if ($coming_soon == 'no') {
+                $html .= '
+                  </a>'
+            }
         } else  {
             $static_graphic = get_field('static_graphic', $post->ID);
             $hover_gif = get_field('hover_graphic', $post->ID);
