@@ -98,6 +98,10 @@ function create_post_types() {
 
 add_action('init', 'create_post_types');
 
+
+
+function get_feed($post_a){
+
 $mailchimp = '<!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
 <style type="text/css">
@@ -108,15 +112,11 @@ $mailchimp = '<!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup">
 <form action="http://watchcdn.us3.list-manage2.com/subscribe/post?u=a00ae4237a0581efc81723c58&amp;id=bad5b59c57" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     
-<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
-    <label for="mce-FNAME">First Name </label>
-    <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+    <input type="text" value="" placeholder="Enter Name" name="FNAME" class="" id="mce-FNAME">
 </div>
 <div class="mc-field-group">
-    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-</label>
-    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+    <input type="email" value="" placeholder="Enter Email" name="EMAIL" class="required email" id="mce-EMAIL">
 </div>
     <div id="mce-responses" class="clear">
         <div class="response" id="mce-error-response" style="display:none"></div>
@@ -129,7 +129,7 @@ $mailchimp = '<!-- Begin MailChimp Signup Form -->
 
 <!--End mc_embed_signup-->';
 
-function get_feed($post_a){
+
     $the_array = $post_a;
     $args = array(
         'post_type' => array('videos', 'posts', 'placeholder-images', 'modals', 'page'),
@@ -162,7 +162,8 @@ function get_feed($post_a){
                             '.$post->post_content;
             if ($modal_type == 'contactform') {
                 $html .= do_shortcode( '[contact-form-7 id="8" title="Contact form 1"]' ); 
-            }else if ($modal_type == 'newsletter') {
+            }
+            if ($modal_type == 'newsletter') {
                 $html .= $mailchimp;
             }
             $html .= '
