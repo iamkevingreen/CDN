@@ -197,6 +197,7 @@ function get_feed($post_a){
             $callout = get_field('additional_callout_graphic', $post->ID);
             $gif_animate = get_field('single_gif_animation', $post->ID);
             $coming_soon = get_field('coming_soon', $post->ID);
+            $html .= $gif_animate;
             $link_out = get_permalink($post->ID);
             if ($coming_soon == 'No') {
                 $html .= '
