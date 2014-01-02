@@ -16,19 +16,23 @@
    ========================================================================== */
 body, li, i {
    font-family: 'NeuzeitSLTStd-Book';
+   font-size: 16px;
    font-weight: normal;
    color: #070201;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p, .meta {
    font-family: 'NeuzeitSLTStd-BookHeavy';
    font-weight: normal;
 }
 
 h4 {
    text-transform: uppercase;
+   letter-spacing: 1px;
    font-size:16px;
 }
-
+h4.title {
+   text-transform: none;
+}
 .container>.navbar-header, .container>.navbar-collapse {
    margin: 0 0 !important;
 }
@@ -262,6 +266,7 @@ h4 {
 }
 h1.title {
    color: #fff;
+   font-size: 22px;
 }
 #feed {
    background: #B01D0A;
@@ -278,8 +283,11 @@ h1.title {
    }
    .about {
       border-bottom: 1px solid rgba(0,0,0,.7);
-      padding-bottom: 50px;
+      padding-bottom: 24px;
       margin-bottom: 40px;
+   }
+   .meta {
+      color: rgba(11,5,2,.5);
    }
 }
 
@@ -300,6 +308,23 @@ h1.title {
       }
       &:hover {
          .opacity(1);
+      }
+   }
+}
+.info-block {
+   .info {
+      width: 70%;
+      float: left;
+   }
+   .social {
+      width: 30%;
+      float: right;
+      font-family: 'NeuzeitSLTStd-BookHeavy';
+      .btn-block {
+         width: 80%;
+         background: rgba(0,0,0,.3);
+         padding: 10px;
+         .box-sizing;
       }
    }
 }
