@@ -205,7 +205,7 @@ function get_feed($post_a){
             $html .= '
                 <div class="span4 feed video-item">
                     <img class="hover_note '.$hover_position.'" src="'. $hover_note . '" alt="" />';
-                    if ($git_animate == 'Single') {
+                    if ($gif_animate == 'Single') {
                         $html .= '<img class="hover-once hover" data-src="'. $hover_gif . '" alt="" />';
                     } else {
                         $html .= '<img class="hover" src="'. $hover_gif . '" alt="" />';
