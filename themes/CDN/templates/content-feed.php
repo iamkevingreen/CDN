@@ -1,4 +1,4 @@
-<div id="feed" style="background <?php the_field('bottom_color'); ?>">
+<div id="feed" style="background: <?php the_field('bottom_color'); ?>">
   <div class="wrapper">
     <div class="about">
       <h4>About <?php the_title(); ?></h4>

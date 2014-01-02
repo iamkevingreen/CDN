@@ -1,4 +1,4 @@
-<header class="banner container" role="banner" style="background <?php the_field('bottom_color'); ?>">
+<header class="banner container" role="banner" style="background: <?php the_field('bottom_color'); ?>">
   <div class="row">
     <div class="col-lg-12">
       <a class="brand" href="<?php echo home_url(); ?>/"><img src="<?php bloginfo('template_directory'); ?>/assets/img/CDN_logo.png" alt="Childrens Documentary Network" /></a>
