@@ -27,7 +27,7 @@
                       <div class="social">
                           <div class="btn-block"><span class="icon-share">Share</span></div>
                           <div class="btn-block">
-                              <div class="fb-like" data-href="'. $post_url .'" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+                              <div class="fb-like" data-href="'. $post_url .'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
 
                           </div>
                       </div>
