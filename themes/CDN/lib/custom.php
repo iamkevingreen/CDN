@@ -109,7 +109,7 @@ $mailchimp = '<!-- Begin MailChimp Signup Form -->
     /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
-<div id="mc_embed_signup">
+<div id="mc_embed_signup_no_st">
 <form action="http://watchcdn.us3.list-manage2.com/subscribe/post?u=a00ae4237a0581efc81723c58&amp;id=bad5b59c57" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     
 <div class="mc-field-group">

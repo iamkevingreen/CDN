@@ -388,10 +388,23 @@ h1.title {
             background-color: #b4d366;              
          }
          height: 560px;
+         margin-top: -160px;
+      }
+      &.modal22 {
+         input[type="submit"] {
+            background: #02d2c1;
+         }
+         height: 350px;
          margin-top: -270px;
       }
    }
-   .input-row {
+
+   &.active {
+      .animation(all .5s);
+      z-index: 200;
+      .opacity(1);
+   }
+}
       input, textarea {
          background-color: #F0EFF0;
          border: none;
@@ -409,7 +422,6 @@ h1.title {
          height: 160px;
       }
 
-   }
    input[type='submit'] {
       color: #fff;
       font-family: 'NeuzeitSLTStd-BookHeavy';
@@ -417,13 +429,10 @@ h1.title {
       border: none;
       padding: 11px 20px 5px;
    }
-   &.active {
-      .animation(all .5s);
-      z-index: 200;
-      .opacity(1);
-   }
-}
 
+#mc-embedded-subscribe {
+   margin: 1em 0 !important;
+}
 
 
 /* ==========================================================================
