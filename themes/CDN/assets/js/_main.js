@@ -35,6 +35,9 @@ var ExampleSite = {
         var imgSrc = $(this).find('.hover-once').attr('data-src');
         //alert(imgSrc);
         $('.hover-once').attr('src', imgSrc);
+      }, function() {
+
+        $('.hover-once').attr('src', '');
       });
 
       $('.modal-block a').click(function(){

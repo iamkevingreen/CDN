@@ -162,8 +162,7 @@ function get_feed($post_a){
                             '.$post->post_content;
             if ($modal_type == 'contactform') {
                 $html .= do_shortcode( '[contact-form-7 id="8" title="Contact form 1"]' ); 
-            }
-            if ($modal_type == 'newsletter') {
+            }else if ($modal_type == 'newsletter') {
                 $html .= $mailchimp;
             }
             $html .= '
