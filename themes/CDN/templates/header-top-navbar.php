@@ -6,7 +6,7 @@
   js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<header class="banner navbar navbar-default navbar-static-top" role="banner" style="background: <?php the_field('bottom_color'); ?>">>
+<header class="banner navbar navbar-default navbar-static-top" role="banner" style="background: <?php the_field('top_color'); ?>">
   <div class="container">
     <div class="navbar-header">
       <a class="brand" href="<?php echo home_url(); ?>/"><img src="<?php bloginfo('template_directory'); ?>/assets/img/CDN_logo.png" alt="Childrens Documentary Network" /></a>
