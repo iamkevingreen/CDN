@@ -141,7 +141,7 @@ function get_feed($post_a){
         } else if ($post_type == 'placeholder-images') {
             $placeholder = get_field('placeholder_graphic', $post->ID);
             $placeholder_hover = get_field('placeholder_hover_graphic', $post->ID);
-            var $hoveron = '';
+            $hoveron = '';
             $spansize = get_field('span_size', $post->ID);
             if ($placeholder_hover != '') {
                 $hoveron = 'hover-place';
@@ -149,7 +149,7 @@ function get_feed($post_a){
             $html .= '
                 <div class="' .$spansize. ' feed placeholder '.$hoveron.'">';
                 if ($hoveron == 'hover-place') {
-                    $html .= '<img src="'.$placeholder_hover.'" alt="">'
+                    $html .= '<img src="'.$placeholder_hover.'" alt="">';
                 }
                 $html .= '
                     <img src="'. $placeholder . '" alt="" />
