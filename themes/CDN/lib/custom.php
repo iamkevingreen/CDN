@@ -197,7 +197,7 @@ function get_feed($post_a){
             $callout = get_field('additional_callout_graphic', $post->ID);
             $gif_animate = get_field('single_gif_animation', $post->ID);
             $coming_soon = get_field('coming_soon', $post->ID);
-            $html .= $gif_animate;
+       
             $link_out = get_permalink($post->ID);
             if ($coming_soon == 'No') {
                 $html .= '
@@ -206,7 +206,7 @@ function get_feed($post_a){
             $html .= '
                 <div class="span4 feed video-item">
                     <img class="hover_note '.$hover_position.'" src="'. $hover_note . '" alt="" />';
-                    if ($gif_animate == 'Single') {
+                    if ($gif_animate == 'single') {
                         $html .= '<img class="hover-once hover" data-src="'. $hover_gif . '" alt="" />';
                     } else {
                         $html .= '<img class="hover" src="'. $hover_gif . '" alt="" />';
