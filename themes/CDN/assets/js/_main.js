@@ -31,6 +31,12 @@ var ExampleSite = {
         sync: "#video-feed"
       });
 
+      $('.video-item').hover(function() {
+        var imgSrc = $(this).find('.hover-once').attr('data-src');
+        //alert(imgSrc);
+        $('.hover-once').attr('src', imgSrc);
+      });
+
       $('.modal-block a').click(function(){
           window.location.hash = $(this).attr('href'); //set hash
           return false; //disables browser anchor jump behavior

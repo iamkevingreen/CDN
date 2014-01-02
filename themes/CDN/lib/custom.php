@@ -98,6 +98,37 @@ function create_post_types() {
 
 add_action('init', 'create_post_types');
 
+$mailchimp = '<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="http://watchcdn.us3.list-manage2.com/subscribe/post?u=a00ae4237a0581efc81723c58&amp;id=bad5b59c57" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+    <label for="mce-FNAME">First Name </label>
+    <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+</div>
+<div class="mc-field-group">
+    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+    <div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_a00ae4237a0581efc81723c58_bad5b59c57" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->';
+
 function get_feed($post_a){
     $the_array = $post_a;
     $args = array(
@@ -132,6 +163,9 @@ function get_feed($post_a){
             if ($modal_type == 'contactform') {
                 $html .= do_shortcode( '[contact-form-7 id="8" title="Contact form 1"]' ); 
             }
+            if ($modal_type == 'newsletter') {
+                $html .= $mailchimp;
+            }
             $html .= '
                         </div>
                     </div>
@@ -149,7 +183,7 @@ function get_feed($post_a){
             $html .= '
                 <div class="' .$spansize. ' feed placeholder '.$hoveron.'">';
                 if ($hoveron == 'hover-place') {
-                    $html .= '<img src="'.$placeholder_hover.'" alt="">';
+                    $html .= '<img class="hover" src="'.$placeholder_hover.'" alt="">';
                 }
                 $html .= '
                     <img src="'. $placeholder . '" alt="" />
@@ -161,6 +195,7 @@ function get_feed($post_a){
             $hover_note = get_field('hover_callout_graphic', $post->ID);
             $hover_position = get_field('hover_position', $post->ID);
             $callout = get_field('additional_callout_graphic', $post->ID);
+            $gif_animate = get_field('single_gif_animation', $post->ID);
             $coming_soon = get_field('coming_soon', $post->ID);
             $link_out = get_permalink($post->ID);
             if ($coming_soon == 'No') {
@@ -169,8 +204,13 @@ function get_feed($post_a){
             }
             $html .= '
                 <div class="span4 feed video-item">
-                    <img class="hover_note '.$hover_position.'" src="'. $hover_note . '" alt="" />
-                    <img class="hover" src="'. $hover_gif . '" alt="" />
+                    <img class="hover_note '.$hover_position.'" src="'. $hover_note . '" alt="" />';
+                    if ($git_animate == 'Single') {
+                        $html .= '<img class="hover-once hover" data-src="'. $hover_gif . '" alt="" />';
+                    } else {
+                        $html .= '<img class="hover" src="'. $hover_gif . '" alt="" />';
+                    }
+                $html .= '
                     <img class="callout" src="'. $callout . '" alt="" />
                     <img src="'. $static_graphic . '" alt="" />
                 </div>
