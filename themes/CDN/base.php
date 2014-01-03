@@ -18,7 +18,7 @@
   ?>
 
   <div class="wrap container" role="document">
-    <div class="content row"  style="background: <?php the_field('top_color'); ?>">
+    <div class="content row"  style="background: <?php if('videos' == get_post_type()) { the_field('top_color'); }?>">
       <main class="main <?php echo roots_main_class(); ?>" role="main">
         <?php include roots_template_path(); ?>
       </main><!-- /.main -->

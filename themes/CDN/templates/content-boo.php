@@ -45,9 +45,9 @@ jQuery(function($) {
     $('#content').on('click', '#pagination a', function(e){
         e.preventDefault();
         var link = $(this).attr('href');
-        $('#content').fadeOut(500, function(){
+        $('#content').fadeOut(100, function(){
             $(this).load(link + ' #content', function() {
-                $(this).fadeIn(500);
+                $(this).fadeIn(100);
             });
         });
     });
