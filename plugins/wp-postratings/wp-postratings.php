@@ -32,7 +32,7 @@ Text Domain: wp-postratings
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 ### Define Image Extension
-define('RATINGS_IMG_EXT', 'gif');
+define('RATINGS_IMG_EXT', 'png');
 //define('RATINGS_IMG_EXT', 'png');
 
 
@@ -75,7 +75,7 @@ function the_ratings($start_tag = 'div', $custom_id = 0, $display = true) {
 	// Loading Style
 	$postratings_ajax_style = get_option('postratings_ajax_style');
 	if(intval($postratings_ajax_style['loading']) == 1) {
-		$loading = "\n<$start_tag id=\"post-ratings-$ratings_id-loading\"  class=\"post-ratings-loading\"><img src=\"".plugins_url('wp-postratings/images/loading.gif')."\" width=\"16\" height=\"16\" alt=\"".__('Loading', 'wp-postratings')." ...\" title=\"".__('Loading', 'wp-postratings')." ...\" class=\"post-ratings-image\" />&nbsp;".__('Loading', 'wp-postratings')." ...</".$start_tag.">\n";
+		$loading = "\n<$start_tag id=\"post-ratings-$ratings_id-loading\"  class=\"post-ratings-loading\"><img src=\"".plugins_url('wp-postratings/images/loading.png')."\" width=\"16\" height=\"16\" alt=\"".__('Loading', 'wp-postratings')." ...\" title=\"".__('Loading', 'wp-postratings')." ...\" class=\"post-ratings-image\" />&nbsp;".__('Loading', 'wp-postratings')." ...</".$start_tag.">\n";
 	} else {
 		$loading = '';
 	}

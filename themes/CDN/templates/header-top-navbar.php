@@ -11,6 +11,11 @@
     <div class="navbar-header">
       <a class="brand" href="<?php echo home_url(); ?>/"><img src="<?php bloginfo('template_directory'); ?>/assets/img/CDN_logo.png" alt="Childrens Documentary Network" /></a>
     </div>
+    <div class="social-links">
+      <a href=""><span class="icon-facebook"></span></a>
+      <a href=""><span class="icon-twitter"></span></a>
+      <a href=""><span class="icon-instagrem"></span></a>
+    </div>
 
 
   </div>
