@@ -7,7 +7,7 @@
       	<li class="feedback" data-hash="tell-us-what-you-think">Tell Us<br />What you Think!</li>
       </ul>
       <div class="foot-wrap">
-        <p class="floatleft upper">&copy; <?php echo date('Y'); ?> Childrens Discovery Network</p>
+        <p class="floatleft upper">&copy; <?php echo date('Y'); ?> Childrens Documentary Network</p>
         <p class="floatright">Site by <a href="http://ryuisland.com" target="_blank">RYU ISLAND</a></p>
       </div>
     </div>
