@@ -639,10 +639,22 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
       .span4 {
          width: 50%;
          max-width: 100%;
+         img {
+            width: auto;
+         }
       }
    }
 }
-
+@media (max-width: 780px) {
+   .row-fluid {      
+      .span4 {
+         img {
+            width: 100%;
+         }
+      }
+   }
+} 
+}
 @media (max-width: 700px) {
    .row-fluid {
       .span2 {
