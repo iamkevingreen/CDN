@@ -10,7 +10,7 @@
         if($rows)
         {
         $total = count($rows);
-        if ($total >= 1) {
+        if ($total > 1) {
         echo '<div class="other-ep">
             <h4>Other Episodes</h4>
             <div id="video-feed" class="flexslider">
