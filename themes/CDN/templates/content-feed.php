@@ -4,15 +4,16 @@
       <h4>About <?php the_title(); ?></h4>
       <?php the_content(); ?>  
     </div>
-    <div class="other-ep">
-        <h4>Other Episodes</h4>
-        <div id="video-feed" class="flexslider">
-          <?php 
+    <?php 
             $post_title = get_the_title();
             $rows = get_field('episode');
             if($rows)
             {
-              echo '<ul class="slides">';
+    echo '<div class="other-ep">
+        <h4>Other Episodes</h4>
+        <div id="video-feed" class="flexslider">
+
+              <ul class="slides">';
              
               foreach($rows as $row)
               {
@@ -22,12 +23,12 @@
                 '<div class="meta">' . $row['episode_meta'] . '</div></li>';
               }
              
-              echo '</ul>';
+              echo '</ul>   </div>
+      </div>';
             } ?>
 
 
-        </div>
-      </div>
+     
     </div>
   </div>
 </div>

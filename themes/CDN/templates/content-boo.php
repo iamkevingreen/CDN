@@ -32,7 +32,7 @@
 
 		<?php endwhile; ?>
 		    <div id="pagination">
-		    <?php next_posts_link('<div class="old icon-arrow-right"></div>', $new_query->max_num_pages) ?>
+		    <div class="next"><?php next_posts_link('<div class="old icon-arrow-right"></div>', $new_query->max_num_pages) ?></div>
 		    <?php previous_posts_link('<div class="new icon-arrow-left"></div>') ?>
 		    </div>
 		</div><!-- #content -->
@@ -51,5 +51,17 @@ jQuery(function($) {
             });
         });
     });
+    /*
+    $('#content').on('click', '.post-ratings', function(e){
+        e.preventDefault();
+        var link = $(this).attr('href');
+        $('#content').fadeOut(100, function(){
+            $(this).load(link + ' #content', function() {
+                $(this).fadeIn(100);
+            });
+        });
+    });
+*/
 });
+
 </script>
