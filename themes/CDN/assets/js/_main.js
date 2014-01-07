@@ -39,7 +39,9 @@ var ExampleSite = {
 
         $('.hover-once').attr('src', '');
       });
-
+      $('#video-feed li').on('click', function() {
+        $(window).scrollTo(0, 800, { queue: true});
+      });
       $('.modal-block a').click(function(){
           window.location.hash = $(this).attr('href'); //set hash
           return false; //disables browser anchor jump behavior

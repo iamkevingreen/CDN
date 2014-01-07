@@ -5,30 +5,30 @@
       <?php the_content(); ?>  
     </div>
     <?php 
-            $post_title = get_the_title();
-            $rows = get_field('episode');
-            if($rows)
-            {
-    echo '<div class="other-ep">
-        <h4>Other Episodes</h4>
-        <div id="video-feed" class="flexslider">
+        $post_title = get_the_title();
+        $rows = get_field('episode');
+        if($rows)
+        {
+        $total = count($rows);
+        if ($total >= 1) {
+        echo '<div class="other-ep">
+            <h4>Other Episodes</h4>
+            <div id="video-feed" class="flexslider">
 
-              <ul class="slides">';
-             
-              foreach($rows as $row)
-              {
-                echo '<li>
-                  <div class="slide-img"><img src="' . $row['video_thumbnail'] . '" alt="" /></div>' 
-                . '<h4 class="title">' . $post_title . ': ' . $row['episode_title'] .'</h4>' .
-                '<div class="meta">' . $row['episode_meta'] . '</div></li>';
-              }
-             
-              echo '</ul>   </div>
-      </div>';
-            } ?>
-
-
-     
+                  <ul class="slides">';
+                 
+                  foreach($rows as $row)
+                  {
+                    echo '<li>
+                      <div class="slide-img"><img src="' . $row['video_thumbnail'] . '" alt="" /></div>' 
+                    . '<h4 class="title">' . $post_title . ': ' . $row['episode_title'] .'</h4>' .
+                    '<div class="meta">' . $row['episode_meta'] . '</div></li>';
+                  }
+                 
+                  echo '</ul>   
+              </div>
+          </div>';
+        } }?>
     </div>
   </div>
 </div>

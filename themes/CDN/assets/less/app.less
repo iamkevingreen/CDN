@@ -369,12 +369,19 @@ h1.title {
 .slides {
    li {
       cursor: pointer;
-      .opacity(1);
+      .opacity(.7);
       &.flex-active-slide {
          .opacity(.7);
       }
       &:hover {
          .opacity(1);
+      }
+   }
+}
+#video-feed {
+   li {
+      &.flex-active-slide {
+         display: none !important;
       }
    }
 }
@@ -613,6 +620,9 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
       .span4 {
          width: 50%;
          max-width: 33.33333333%;
+         img {
+            width: 100%;
+         }
       }
    }
 }
@@ -625,6 +635,9 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
       .span4 {
          width: 50%;
          max-width: 100%;
+         img {
+            width: auto;
+         }
       }
    }
 }
