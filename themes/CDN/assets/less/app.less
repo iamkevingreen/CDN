@@ -535,6 +535,7 @@ h1.title {
 .content-info { 
    background-color: #F0F0F0;
    padding: 50px 0 40px;
+   font-size: 16px;
    ul {
       min-height: 150px;
       li {
@@ -560,6 +561,7 @@ h1.title {
       }
       &.floatleft {
          float: left;
+         text-align: left;
          width: 50%;
       }
       font-family: 'NeuzeitSLTStd-BookHeavy';
@@ -569,6 +571,10 @@ h1.title {
 }
 .upper {
    text-transform: uppercase;
+}
+.foot-wrap {
+   max-width: 94%;
+   margin: 0 auto;
 }
 
 
@@ -620,10 +626,12 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
       }
    }
    footer {
-      p {
-         text-align: center;
-         width: 80%;
+      p {      
+         float: none !important;
+         text-align: center !important;
+         width: 80% !important;
          margin: 0 auto;
+         padding: 14px 0 0;
       }
    }
 }
