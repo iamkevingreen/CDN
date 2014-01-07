@@ -157,6 +157,12 @@ h4.title {
       }
    }
 }
+a {
+   &:hover {
+      text-decoration: none;
+      color: #0033fe;
+   }
+}
 
 /* ==========================================================================
    Header
@@ -462,6 +468,7 @@ h1.title {
       color: #fff;
       font-family: 'NeuzeitSLTStd-BookHeavy';
       font-weight: normal;
+      width: auto;
       border: none;
       padding: 11px 20px 5px;
    }
@@ -546,12 +553,22 @@ h1.title {
       }
    }
    p {
-      text-align: right;
-      text-transform: uppercase;
+      &.floatright {
+         float: right;
+         width: 50%;
+         text-align: right;
+      }
+      &.floatleft {
+         float: left;
+         width: 50%;
+      }
       font-family: 'NeuzeitSLTStd-BookHeavy';
       color: rgba(0,0,0,.3);
       width: 98%;
    }
+}
+.upper {
+   text-transform: uppercase;
 }
 
 

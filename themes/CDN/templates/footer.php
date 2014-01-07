@@ -6,7 +6,8 @@
       	<li class="signup" data-hash="sign-up-to-receive-rad-updates">Sign Up<br />To recieve the<br />Latest Updates!</li>
       	<li class="feedback" data-hash="tell-us-what-you-think">Tell Us<br />What you Think!</li>
       </ul>
-      <p>Childrens Discovery Network &copy; Copyright <?php echo date('Y'); ?></p>
+      <p class="floatleft upper">&copy; <?php echo date('Y'); ?> Childrens Discovery Network</p>
+      <p class="floatright">Site by <a href="http://ryuisland.com" target="_blank">RYU ISLAND</a></p>
     </div>
   </div>
 </footer>
