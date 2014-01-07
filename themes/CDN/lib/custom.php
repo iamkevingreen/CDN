@@ -98,7 +98,33 @@ function create_post_types() {
 
 add_action('init', 'create_post_types');
 
+function page_cache($post_a) {
+    $the_array = $post_a;
+    $args = array(
+        'post_type' => array('videos', 'posts', 'placeholder-images', 'modals', 'page'),
+        'numberposts'   => '-1',
+        'post__in' => $the_array,
+        'orderby' => 'post__in',
+        'order' => 'DESC',
+        //'post_status'     => 'publish',
+    );
+    $posts = get_posts($args);
+    $html = '<script>
+    var cacheGIF = [';
 
+    foreach ($posts as $post) {
+
+        $post_type = get_post_type($post->ID);
+        $image_gif = get_field('hover_gif', $post->ID);
+        if ($post_type == 'videos') {
+            $html .= '"'.$image_gif.'",';
+        }
+    }
+    $html .= '
+    ]
+    </script>';
+    return $html;
+}
 
 function get_feed($post_a){
 

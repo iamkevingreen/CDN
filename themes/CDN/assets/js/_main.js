@@ -101,3 +101,14 @@ var UTIL = {
 };
 
 $(document).ready(UTIL.loadEvents);
+
+function preCacheHeros(){
+    $.each(cacheGIF, function(){
+        var img = new Image();
+        img.src = this;
+    });
+}
+ 
+$(window).load(function(){
+    preCacheHeros();
+});
