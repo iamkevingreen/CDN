@@ -563,11 +563,16 @@ h1.title {
          font-family: 'NeuzeitSLTStd-BookHeavy';
          width: 200px;
          cursor: pointer;
+         .transition(opacity .5s);
          &.signup {
             color: #02d2c1;
          }
          &.feedback {
             color: #b4d366;
+         }
+         &:hover {
+            .opacity(.5);
+            .transition(opacity .5s);
          }
       }
    }
