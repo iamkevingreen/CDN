@@ -63,7 +63,7 @@ var ExampleSite = {
       });
       $('.modal-window .modal-container').on('click', function(event) {
         event.stopPropagation();
-        return false;
+        //return false;
       });
     },
     finalize: function() { }
