@@ -4,7 +4,14 @@
   		<div class="header">
   			<img src="<?php bloginfo('template_directory'); ?>/assets/img/boo-boo.png" alt="Boo Boos and Boogers" />
   		</div>
+
+
+
 		<div id="content">
+			<div class="dino">
+				<h4>Got what it takes?<br /><a href="mailto:address@gmail.com">Submit</a> Yours!</h4>
+				<img src="<?php bloginfo('template_directory'); ?>/assets/img/dino.png" alt="submit yours">
+			</div>
 		    <?php
 		$new_query = new WP_Query();
 		$new_query->query('post_type=boogers&orderby=rand&showposts=1'.'&paged='.$paged);
