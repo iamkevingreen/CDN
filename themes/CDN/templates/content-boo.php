@@ -9,7 +9,7 @@
 
 		<div id="content">
 			<div class="dino">
-				<h4>Got what it takes?<br /><a href="mailto:address@gmail.com">Submit</a> Yours!</h4>
+				<h4>Got what it takes?<br /><a href="mailto:address@gmail.com">Submit Yours!</a></h4>
 				<img src="<?php bloginfo('template_directory'); ?>/assets/img/dino.png" alt="submit yours">
 			</div>
 		    <?php
