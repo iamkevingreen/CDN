@@ -233,7 +233,7 @@ a {
          position: absolute;
          width: 100%;
          z-index: 100;
-         top: 30%;
+         top: 20%;
          a {
             font-size: 30px;
             color: #596e16;
@@ -248,16 +248,21 @@ a {
    }
    .old {
       position: absolute;
-      right: 280px;
+      right: 50%;
+      margin-right: -310px;
    }
    .new {
       position: absolute;
-      left: 30px;
+      left: 50%;
+      margin-left: -310px;
    }
 }
 .dino {
    position: absolute;
    right: 0px;
+   a {
+      color: #fff;
+   }
    h4 {
       position: absolute;
       color: #fff;
@@ -685,11 +690,6 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    .dino {
       display: none;
    }
-   .post-37 {
-      .old {
-         right: 30px;
-      }
-   }
 }
 @media (max-width: 700px) {
    .row-fluid {
@@ -716,6 +716,17 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
       .info {
          float: none;
          width: 100%;
+      }
+   }
+
+   .post-37 {
+      .old {
+         right: 30px;
+         margin-right:0px;
+      }
+      .new {
+         left: 30px;
+         margin-left: 0px;
       }
    }
 }

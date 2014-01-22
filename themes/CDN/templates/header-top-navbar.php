@@ -13,7 +13,7 @@
     </div>
     <div class="social-links">
       <a href=""><span class="icon-facebook"></span></a>
-      <a href=""><span class="icon-twitter"></span></a>
+      <a href="https://twitter.com/WatchCDN"><span class="icon-twitter"></span></a>
       <a href=""><span class="icon-instagrem"></span></a>
     </div>
 
