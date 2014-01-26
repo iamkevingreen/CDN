@@ -233,13 +233,17 @@ $mailchimp = '<!-- Begin MailChimp Signup Form -->
                 <div class="span4 feed video-item">
                     <img class="hover_note '.$hover_position.'" src="'. $hover_note . '" alt="" />';
                     if ($gif_animate == 'single') {
-                        $html .= '<img class="hover-once hover" data-src="'. $hover_gif . '" alt="" />';
+                        $html .= '<div class="hover">
+                            <img class="hover-once " data-src="'. $hover_gif . '" alt="" />
+                            </div>';
                     } else {
-                        $html .= '<img class="hover" src="'. $hover_gif . '" alt="" />';
+                        $html .= '<div class="hover">
+                            <img class="" src="'. $hover_gif . '" alt="" />
+                            </div>';
                     }
                 $html .= '
                     <img class="callout" src="'. $callout . '" alt="" />
-                    <img src="'. $static_graphic . '" alt="" />
+                    <img class="static_flat" src="'. $static_graphic . '" alt="" />
                 </div>
             ';
              if ($coming_soon == 'No') {
@@ -252,8 +256,10 @@ $mailchimp = '<!-- Begin MailChimp Signup Form -->
             $html .= '
                 <a href="' . $link_out . '">
                 <div class="span4 feed booger-item">
-                    <img class="hover" src="'. $hover_gif . '" alt="" />
-                    <img src="'. $static_graphic . '" alt="" />
+                    <div class="hover">
+                        <img class="" src="'. $hover_gif . '" alt="" />
+                    </div>
+                    <img class="static_flat" src="'. $static_graphic . '" alt="" />
                 </div>
               </a>
             ';
