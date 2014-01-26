@@ -24,8 +24,11 @@ h1, h2, h3, h4, h5, h6, p, .meta {
    font-family: 'NeuzeitSLTStd-BookHeavy';
    font-weight: normal;
 }
-footer li, footer p{
+footer li {
    font-size: 16px;
+}
+footer p{
+   font-size: 15px;
 }
 h4 {
    text-transform: uppercase;
@@ -207,14 +210,23 @@ a {
    Boogers
    ========================================================================== */
 
+.booger {
+   position: relative;
+   .rateimg {
+      margin-top: 20px;
+   }
+}
+
 .post-37 {
    text-align: center;
       min-height: 730px;
    .header {
       img {
-         max-width: 100%;
+         max-width: 600px;
+         width: 100%;
+         margin: 0 auto;
          padding-bottom: 30px;
-         padding-top:20px;
+         padding-top:10px;
       }
    }
    .ranking {
@@ -228,12 +240,13 @@ a {
       }
    }
    #content {
+      overflow:hidden;
       position:relative;
       #pagination {
          position: absolute;
          width: 100%;
          z-index: 100;
-         top: 20%;
+         top: 18px;
          a {
             font-size: 30px;
             color: #596e16;
@@ -259,7 +272,8 @@ a {
 }
 .dino {
    position: absolute;
-   right: 0px;
+   right: -40px;
+   bottom: -60px;
    a {
       color: #fff;
       &:hover {
@@ -691,7 +705,34 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 }
 @media (max-width: 970px) {
    .dino {
-      display: none;
+    //  display: none;
+      img {
+         max-width: 300px;
+      }
+    h4 {
+      font-size: 13px;
+      top:36px;
+      left:27px;
+    }
+   }
+}
+@media (max-width: 830px) {
+   .dino {
+    //  display: none;
+      position: relative;
+      width: 100%;
+      text-align: right;
+      img {
+         max-width:100%;
+      }
+      overflow: hidden;
+    h4 {
+      text-align:center;
+      font-size: 16px;
+      top:50px;
+      left:auto;
+      right: 178px;
+    }
    }
 }
 @media (max-width: 700px) {

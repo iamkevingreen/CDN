@@ -8,10 +8,6 @@
 
 
 		<div id="content">
-			<div class="dino">
-				<h4>Got what it takes?<br /><a href="mailto:address@gmail.com">Submit Yours!</a></h4>
-				<img src="<?php bloginfo('template_directory'); ?>/assets/img/dino.png" alt="submit yours">
-			</div>
 		    <?php
 		$new_query = new WP_Query();
 		$new_query->query('post_type=boogers&orderby=rand&showposts=1'.'&paged='.$paged);
@@ -20,13 +16,18 @@
 		<?php while ($new_query->have_posts()) : $new_query->the_post(); ?>
 
 		<div class="booger">
-			<img src="<?php the_field('booger_image'); ?>" alt="<?php the_title(); ?>" />
+
+			<?php if(function_exists('the_ratings')) { the_ratings(); } ?>
+			<img class="rateimg" src="<?php the_field('booger_image'); ?>" alt="<?php the_title(); ?>" />
 			
+			<div class="dino">
+				<h4>Got what it takes?<br /><a href="mailto:address@gmail.com">Submit Yours!</a></h4>
+				<img src="<?php bloginfo('template_directory'); ?>/assets/img/dino.png" alt="submit yours">
+			</div>
 		</div>
 		<div class="ranking">
 			<h4>Rate this Booger!</h4>
 			<p>Rate each photo to reveal its rank, and submit yours to become a legend of gross.</p>
-			<?php if(function_exists('the_ratings')) { the_ratings(); } ?>
 			<h2>Rating: 
 			<?php $rating = get_post_meta($post->ID, 'ratings_average', true); 
 				if ($rating != ' ') {
