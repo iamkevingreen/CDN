@@ -28,14 +28,14 @@
                           <div class="btn-block share"><span class="icon-share">Share</span></div>
                           <div class="btn-block">
                               <div class="fb-like" data-href="'. $post_url .'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-                              <div class="tweet">
-                                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
-                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                              <div class="tweet">';
+                              echo "<a href='https://twitter.com/share' class='twitter-share-button' data-via='watchcdn'>Tweet</a>
+                                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                               </div>
                           </div>
                       </div>
                    </div>
-                   </li>';
+                   </li>";
               }
               echo '</ul>';
             } ?>
