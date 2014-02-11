@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><?php wp_title('|', true, 'right'); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="<?php bloginfo('template_directory'); ?>/favicon.png">
   <style type="css/stylesheet">
   	@import url("//hello.myfonts.net/count/296db2");
   </style>

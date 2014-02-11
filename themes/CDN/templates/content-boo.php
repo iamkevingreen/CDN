@@ -17,7 +17,7 @@
 
 		<div class="booger">
 
-			<?php if(function_exists('the_ratings')) { the_ratings(); } ?>
+			<h4>Rate this Booger!</h4>
 			<img class="rateimg" src="<?php the_field('booger_image'); ?>" alt="<?php the_title(); ?>" />
 			
 			<div class="dino">
@@ -26,9 +26,9 @@
 			</div>
 		</div>
 		<div class="ranking">
-			<h4>Rate this Booger!</h4>
+			<?php if(function_exists('the_ratings')) { the_ratings(); } ?>
 			<p>Rate each photo to reveal its rank, and submit yours to become a legend of gross.</p>
-			<h2>Rating: 
+			<h2>Average Rating: 
 			<?php $rating = get_post_meta($post->ID, 'ratings_average', true); 
 				if ($rating != ' ') {
 					echo $rating;
